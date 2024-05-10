@@ -1,0 +1,19 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="UserMapper">	
+	 		
+	
+	<select id="findByIdAndPw" parameterType="User" resultType="User">
+		SELECT * FROM user
+		WHERE id=#{id} AND pw=#{pw}
+	</select>
+	
+	<update id="updatePw" parameterType="User" >
+		UPDATE user
+		SET
+			pw=#{pw}
+		WHERE
+			user_idx=#{user_idx}	
+	</update>
+	
+	
+</mapper>
